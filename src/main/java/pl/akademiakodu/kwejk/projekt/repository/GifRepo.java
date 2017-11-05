@@ -15,4 +15,15 @@ public class GifRepo {
     public void addGif(Gif gif) {
         gifs.add(gif);
     }
+
+    public List<Gif> allGifsByCategory(Category category) {
+        List<Gif> catGif = new ArrayList<>();
+        for (Gif gif : gifs
+                ) {
+            if (gif.getGifCategory().equals(category)) {
+                catGif.add(gif);
+            }
+        }
+        return catGif;
+    }
 }

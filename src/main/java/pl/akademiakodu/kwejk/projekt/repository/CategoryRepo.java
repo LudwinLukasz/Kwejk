@@ -17,5 +17,30 @@ public class CategoryRepo {
         categories.add(category);
     }
 
+    public Category findByName(String name) {
+        for (Category category : categories
+                ) {
+            if (category.getName().equals(name)) {
+                return category;
+            }
+        }
+        throw new IllegalArgumentException("category "+ name + " does not exist") ;
+    }
+
+    public Category findById(Long id) {
+        for (Category category : categories
+                ) {
+            if (category.getId().equals(id)) {
+                return category;
+            }
+        }
+        throw new IllegalArgumentException("category "+ id + " does not exist") ;
+    }
+
 
 }
+//    public void addGifToCategory(Category category, Gif gif) {
+//
+//    }
+
+
