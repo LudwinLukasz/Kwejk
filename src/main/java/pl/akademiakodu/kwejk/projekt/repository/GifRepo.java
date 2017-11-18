@@ -1,7 +1,7 @@
 package pl.akademiakodu.kwejk.projekt.repository;
 
-import pl.akademiakodu.kwejk.projekt.model.Category;
 import pl.akademiakodu.kwejk.projekt.model.Gif;
+import pl.akademiakodu.kwejk.projekt.model.manytoone.ModelCategory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,11 +16,13 @@ public class GifRepo {
         gifs.add(gif);
     }
 
-    public List<Gif> allGifsByCategory(Category category) {
+    public List<Gif> allGifsByCategory(ModelCategory category) {
         List<Gif> catGif = new ArrayList<>();
         for (Gif gif : gifs
                 ) {
-            if (gif.getGifCategory().equals(category)) {
+            System.out.println(category);
+            System.out.println(gif);
+            if (category.equals(gif.getGifCategory())) {
                 catGif.add(gif);
             }
         }

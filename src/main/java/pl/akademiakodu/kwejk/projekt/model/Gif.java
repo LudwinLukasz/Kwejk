@@ -1,6 +1,7 @@
 package pl.akademiakodu.kwejk.projekt.model;
 
 import org.springframework.stereotype.Component;
+import pl.akademiakodu.kwejk.projekt.model.manytoone.ModelCategory;
 
 /**
  * Created by arabk on 04.11.2017.
@@ -10,10 +11,10 @@ public class Gif {
 
    public String name;
    public  Boolean favorite;
-   public Category gifCategory;
+   public ModelCategory gifCategory;
 
     public Gif() {}
-    public Gif(String name, Boolean favorite, Category category) {
+    public Gif(String name, Boolean favorite, ModelCategory category) {
         this.name = name;
         this.favorite = favorite;
         this.gifCategory = category;
@@ -35,11 +36,20 @@ public class Gif {
         this.favorite = favorite;
     }
 
-    public Category getGifCategory() {
+    public ModelCategory getGifCategory() {
         return gifCategory;
     }
 
-    public void setGifCategory(Category gifCategory) {
+    public void setGifCategory(ModelCategory gifCategory) {
         this.gifCategory = gifCategory;
+    }
+
+    @Override
+    public String toString() {
+        return "Gif{" +
+                "name='" + name + '\'' +
+                ", favorite=" + favorite +
+                ", gifCategory=" + gifCategory +
+                '}';
     }
 }
